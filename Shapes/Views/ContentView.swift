@@ -2,15 +2,20 @@
 //  ContentView.swift
 //  Shapes
 //
-//  Created by Brendan on 1/15/22.
+//  Created by Brendan on 1/16/22.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var colorData = ColorData()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Shapes()
+            ColorMenu()
+        }
+        .environmentObject(colorData)
     }
 }
 
